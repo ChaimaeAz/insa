@@ -24,5 +24,50 @@ class PoneysTest extends TestCase
         // Assert
         $this->assertEquals(5, $Poneys->getCount());
     }
+
+    /**
+     * tester l'ajout d'un poney function
+     *
+     * @return void
+     */
+
+    public function testAddPoneyFromField()
+    {
+
+        $Poneys = new Poneys();
+
+        $Poneys->addPoneyFromField(3);
+
+        $this->assertEquals(11, $Poneys->getCount());
+    }
+
+    /**
+     * Exception test  function
+     *
+     * @return void
+     */
+
+    public function testRemovePoneyFromFieldExcetption(){
+
+        $this->expectException(NegativePoneysException::class);
+
+        $Poneys = new Poneys();
+
+        $Poneys->removePoneyFromField(24);
+    }
 }
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
