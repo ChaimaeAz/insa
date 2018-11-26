@@ -53,7 +53,7 @@ class PoneysTest extends TestCase
 
         $Poneys = new Poneys();
 
-        $Poneys->removePoneyFromField(24);
+        $Poneys->removePoneysFromField(24);
     }
 }
 ?>

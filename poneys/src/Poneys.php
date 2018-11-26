@@ -52,22 +52,12 @@ class Poneys
      */
     public function removePoneysFromField(int $number): void
     {
-        foreach ($number as $value) 
-        {
-            if($this->_count >= 0)
-            {
-                $this->_count -= $value;
 
-            }
-            else
-            {
-               throw new NegativePoneysException(); 
-;
-               
-            }
-        }
+        if($this->_count - $number < 0)
+            throw new NegativePoneysCountException(); 
+        else
+            $this->_count -= $number;
     }
-
     /**
      * Retourne les noms des poneys
      *
